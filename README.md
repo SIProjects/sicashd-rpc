@@ -1,29 +1,29 @@
-qtumd-rpc.js
+sicashd-rpc.js
 ===============
 
-A client library to connect to QTUM Core RPC in JavaScript.
+A client library to connect to SICash Core RPC in JavaScript.
 
 ## Get Started
 
-qtumd-rpc.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+sicashd-rpc.js runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install qtumd-rpc
+npm install sicashd-rpc
 ```
 
 ## Examples
 
 ```javascript
 var run = function() {
-  var qtumcore = require('qtumcore');
-  var RpcClient = require('qtumd-rpc');
+  var sicashcore = require('sicashcore');
+  var RpcClient = require('sicashd-rpc');
 
   var config = {
     protocol: 'http',
     user: 'user',
     pass: 'pass',
     host: '127.0.0.1',
-    port: '18332',
+    port: '18551',
   };
 
   var rpc = new RpcClient(config);
@@ -52,7 +52,7 @@ var run = function() {
         }
 
         rawtxs.map(function (rawtx) {
-          var tx = new qtumcore.Transaction(rawtx.result);
+          var tx = new sicashcore.Transaction(rawtx.result);
           console.log('\n\n\n' + tx.id + ':', tx.toObject());
         });
 
@@ -67,4 +67,3 @@ var run = function() {
 ```
 
 ## License
-
